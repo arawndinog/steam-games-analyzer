@@ -24,7 +24,7 @@ def main():
                 continue
         # exclude non-games
         if app["data"]["type"] == "game":
-            
+
             # free to play?
             is_free = app["data"]["is_free"]
 
@@ -48,9 +48,8 @@ def main():
                         directx_ver += pc_requirements_str[pc_requirements_str_i]
                     elif directx_ver:
                         break
-            if not directx_ver:
+            if not directx_ver or int(directx_ver) > 12:
                 directx_ver = "9"
-            directx_ver = int(directx_ver)
 
             # parse categories
             have_in_app_purchase = False
